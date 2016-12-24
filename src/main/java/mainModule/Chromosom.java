@@ -1,3 +1,4 @@
+package mainModule;
 
 public class Chromosom {
 
