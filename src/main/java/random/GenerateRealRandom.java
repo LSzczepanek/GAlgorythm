@@ -7,7 +7,7 @@ public class GenerateRealRandom {
 	
 	public static byte generate0to127Random(String[] random){
 
-		int number = Integer.parseInt(random[ThreadLocalRandom.current().nextInt(0,10000+1)]);	
+		int number = Integer.parseInt(random[ThreadLocalRandom.current().nextInt(0,random.length)]);	
 		byte ourRandom = (byte) (number % 128);
 		return ourRandom;
 	}

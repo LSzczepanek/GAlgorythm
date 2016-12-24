@@ -18,9 +18,17 @@ public class StartMain {
 		}
 		
 		
+//		System.out.print(testFile[0].replaceAll("\\r", ""));
+//		System.out.println("test");
+//		int test = Integer.parseInt("123 ".replaceAll("\\n", ""));
+//		System.out.println(test);
 		for(int i = 0; i <10 ; i++){
 			System.out.println(GenerateRealRandom.generate0to127Random(testFile));
 		}
+		
+		
+		System.out.println(Integer.toBinaryString(6));
+		System.out.println(Integer.parseInt(Integer.toBinaryString(6), 2));
 
 	}
 

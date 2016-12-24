@@ -38,7 +38,10 @@ public class GetNumbersFromFile {
 			e.printStackTrace();
 		}
 		
+		testFile = testFile.replaceAll("\\r", "");
 		String[] separatedString = testFile.split("\\n");
+		
+		
 		
 		return separatedString;
 	}
