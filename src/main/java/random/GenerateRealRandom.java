@@ -11,5 +11,20 @@ public class GenerateRealRandom {
 		byte ourRandom = (byte) (number % 128);
 		return ourRandom;
 	}
+	
+	
+	public static byte generate0to100Random(String[] random){
+
+		int number = Integer.parseInt(random[ThreadLocalRandom.current().nextInt(0,random.length)]);	
+		byte ourRandom = (byte) (number % 101);
+		return ourRandom;
+	}
+	
+	public static byte generate0to7Random(String[] random){
+
+		int number = Integer.parseInt(random[ThreadLocalRandom.current().nextInt(0,random.length)]);	
+		byte ourRandom = (byte) (number % 8);
+		return ourRandom;
+	}
 
 }

@@ -29,6 +29,10 @@ public class StartMain {
 		
 		System.out.println(Integer.toBinaryString(6));
 		System.out.println(Integer.parseInt(Integer.toBinaryString(6), 2));
+		
+		Individual firstOne = new Individual(GenerateRealRandom.generate0to127Random(testFile));
+		
+		System.out.println(firstOne.toString());
 
 	}
 

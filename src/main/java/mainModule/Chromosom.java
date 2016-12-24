@@ -3,12 +3,22 @@ package mainModule;
 public class Chromosom {
 
 	
-	String chromosom;
-	long chromosomAsBytes;
+	
+	String chromosomAsBinary;
 	byte chromosomAsNumber;
 	
 	
-	Chromosom(String chromosom){
-		this.chromosom = chromosom;
+	Chromosom(byte chromosom){
+		chromosomAsNumber = chromosom;
+		chromosomAsBinary = Integer.toBinaryString(chromosomAsNumber);
+		
+	}
+	
+	
+	@Override
+	public String toString() {
+		
+		return  "\nChromosom as number: "+chromosomAsNumber
+						+ "\nChromosom as Binary: "+chromosomAsBinary;
 	}
 }
