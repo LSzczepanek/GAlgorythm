@@ -5,7 +5,9 @@ import java.util.concurrent.ThreadLocalRandom;
 public class GenerateRealRandom {
 	
 	
-	public static byte generate0to127Random(String[] random){
+	public static String[] random = GetNumbersFromFile.getPreparedFile();
+	
+	public static byte generate0to127Random(){
 
 		int number = Integer.parseInt(random[ThreadLocalRandom.current().nextInt(0,random.length)]);	
 		byte ourRandom = (byte) (number % 128);
@@ -13,14 +15,14 @@ public class GenerateRealRandom {
 	}
 	
 	
-	public static byte generate0to100Random(String[] random){
+	public static byte generate0to100Random(){
 
 		int number = Integer.parseInt(random[ThreadLocalRandom.current().nextInt(0,random.length)]);	
 		byte ourRandom = (byte) (number % 101);
 		return ourRandom;
 	}
 	
-	public static byte generate0to7Random(String[] random){
+	public static byte generate0to7Random(){
 
 		int number = Integer.parseInt(random[ThreadLocalRandom.current().nextInt(0,random.length)]);	
 		byte ourRandom = (byte) (number % 8);

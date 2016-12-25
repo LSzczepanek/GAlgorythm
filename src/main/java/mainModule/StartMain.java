@@ -1,38 +1,49 @@
 package mainModule;
 
 import random.GenerateRealRandom;
-import random.GetNumbersFromFile;
 
 public class StartMain {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+
 		
-		String[] testFile = GetNumbersFromFile.getPreparedFile();
 		
-		System.out.println(testFile.length);
+		char[] testArray = {'0','0','0','0','1','0','1'};
+		char[] testArray2 = {'0','0','0','0','0','1','1'};
+
+		System.out.println(GenerateRealRandom.random.length);
 		int count = 0;
-		for (String string : testFile) {
-			System.out.println(count+": "+string);
+		for (String string : GenerateRealRandom.random) {
+			System.out.println(count + ": " + string);
 			count++;
 		}
-		
-		
-//		System.out.print(testFile[0].replaceAll("\\r", ""));
-//		System.out.println("test");
-//		int test = Integer.parseInt("123 ".replaceAll("\\n", ""));
-//		System.out.println(test);
-		for(int i = 0; i <10 ; i++){
-			System.out.println(GenerateRealRandom.generate0to127Random(testFile));
+
+		// System.out.print(testFile[0].replaceAll("\\r", ""));
+		// System.out.println("test");
+		// int test = Integer.parseInt("123 ".replaceAll("\\n", ""));
+		// System.out.println(test);
+		for (int i = 0; i < 10; i++) {
+			System.out.println(GenerateRealRandom.generate0to127Random());
 		}
-		
-		
+
 		System.out.println(Integer.toBinaryString(6));
 		System.out.println(Integer.parseInt(Integer.toBinaryString(6), 2));
-		
-		Individual firstOne = new Individual(GenerateRealRandom.generate0to127Random(testFile));
-		
+
+		Individual firstOne = new Individual(GenerateRealRandom.generate0to127Random());
+
 		System.out.println(firstOne.toString());
+
+		Individual secondOne = new Individual(firstOne.chromosom.chromosomAsCharArray);
+		System.out.println();
+		System.out.println(secondOne.toString());
+		
+		Individual thirdOne = new Individual(testArray);
+		System.out.println();
+		System.out.println(thirdOne.toString());
+		Individual fourthOne = new Individual(testArray2);
+		System.out.println();
+		System.out.println(fourthOne.toString());
 
 	}
 
