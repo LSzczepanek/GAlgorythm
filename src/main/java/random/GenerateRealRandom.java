@@ -26,5 +26,12 @@ public class GenerateRealRandom {
 		byte ourRandom = (byte) (number % 7);
 		return ourRandom;
 	}
+	
+	public static byte generate0to7Random() {
+
+		int number = Integer.parseInt(random[ThreadLocalRandom.current().nextInt(0, random.length)]);
+		byte ourRandom = (byte) (number % 8);
+		return ourRandom;
+	}
 
 }

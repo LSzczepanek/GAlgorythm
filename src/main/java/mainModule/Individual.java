@@ -24,7 +24,7 @@ public class Individual {
 	public Individual[] crossWith(Individual secondIndividual) {
 		int locus = calculateLocus();
 		
-		System.out.println("Locus is: "+ locus);
+		System.out.println("Crossing with locus: "+ locus);
 		
 		char[] tmpArray = Arrays.copyOf(this.chromosom.chromosomAsCharArray, this.chromosom.chromosomAsCharArray.length);
 		char[] thisSubject = Arrays.copyOf(this.chromosom.chromosomAsCharArray, this.chromosom.chromosomAsCharArray.length);
@@ -38,7 +38,21 @@ public class Individual {
 		return crossedIndividuals;
 	}
 	
-	
+	public Individual mutate(byte locus){
+		
+		System.out.println("Mutation with locus: "+locus);
+		char[] subjectToMutate = Arrays.copyOf(this.chromosom.chromosomAsCharArray, this.chromosom.chromosomAsCharArray.length);
+		if(subjectToMutate[locus] == '0'){
+			subjectToMutate[locus] = '1';
+		}else if(subjectToMutate[locus] == '1'){
+			subjectToMutate[locus] = '0';
+		}
+		else{
+			System.out.println("Mutation gone wrong!!");
+			return null;
+		}
+		return new Individual(subjectToMutate);
+	}
 	
 
 	private int calculateLocus() {

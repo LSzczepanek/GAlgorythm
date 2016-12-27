@@ -1,5 +1,8 @@
 package mainModule;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import random.GenerateRealRandom;
 
 public class StartMain {
@@ -27,6 +30,30 @@ public class StartMain {
 			System.out.println(GenerateRealRandom.generate0to127Random());
 		}
 
+		List<Individual> startingPopulation = new ArrayList<Individual>();
+		startingPopulation.add(new Individual(GenerateRealRandom.generate0to127Random()));
+		startingPopulation.add(new Individual(GenerateRealRandom.generate0to127Random()));
+		startingPopulation.add(new Individual(GenerateRealRandom.generate0to127Random()));
+		startingPopulation.add(new Individual(GenerateRealRandom.generate0to127Random()));
+		startingPopulation.add(new Individual(GenerateRealRandom.generate0to127Random()));
+		startingPopulation.add(new Individual(GenerateRealRandom.generate0to127Random()));
+		startingPopulation.add(new Individual(GenerateRealRandom.generate0to127Random()));
+		startingPopulation.add(new Individual(GenerateRealRandom.generate0to127Random()));
+		
+		System.out.println("###POPULATION###");
+		for (Individual individual : startingPopulation) {
+			System.out.println(individual.toString());
+		}
+		
+		List<Individual> currentPopulation = new ArrayList<Individual>(startingPopulation);
+		
+		do{
+			
+			
+		}while(0==1);
+		
+		System.out.println("###POPULATION###");
+		
 		System.out.println(Integer.toBinaryString(6));
 		System.out.println(Integer.parseInt(Integer.toBinaryString(6), 2));
 
@@ -52,6 +79,9 @@ public class StartMain {
 			System.out.println(individual);
 		}
 
+		System.out.println();
+		Individual mutated = thirdOne.mutate(GenerateRealRandom.generate0to6Random());
+		System.out.println(mutated.toString());
 	}
 
 }
