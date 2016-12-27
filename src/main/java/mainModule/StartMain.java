@@ -38,12 +38,19 @@ public class StartMain {
 		System.out.println();
 		System.out.println(secondOne.toString());
 		
-		Individual thirdOne = new Individual(testArray);
+		Individual thirdOne = new Individual((byte) 5);
 		System.out.println();
 		System.out.println(thirdOne.toString());
-		Individual fourthOne = new Individual(testArray2);
+		Individual fourthOne = new Individual((byte) 20);
 		System.out.println();
 		System.out.println(fourthOne.toString());
+		
+		
+		Individual[] testCross = thirdOne.crossWith(fourthOne);
+		
+		for (Individual individual : testCross) {
+			System.out.println(individual);
+		}
 
 	}
 
