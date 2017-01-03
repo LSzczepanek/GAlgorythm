@@ -36,7 +36,7 @@ public class GenerateRealRandom {
 	}
 	
 	public static double generate0to100DoubleRandom(){
-		
+
 		Random rand = new Random(Integer.parseInt(random[ThreadLocalRandom.current().nextInt(0, random.length)]));
 		double ourRandom = (double) 0.00 + (100.00 - 0.00) * rand.nextDouble();
 		return ourRandom;

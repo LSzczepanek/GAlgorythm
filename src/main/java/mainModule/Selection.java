@@ -3,6 +3,8 @@ package mainModule;
 import java.util.ArrayList;
 import java.util.List;
 
+import random.GenerateRealRandom;
+
 public class Selection {
 
 	public static List<Individual> makeSelection(List<Individual> population) {
@@ -10,7 +12,8 @@ public class Selection {
 		List<Individual> newPopulation = new ArrayList<Individual>();
 		double[] range = setRanges(population);
 		do {
-			double random = 0;
+			double random = GenerateRealRandom.generate0to100DoubleRandom();
+			System.out.println("Random value is: " + random);
 
 			if (random > range[0] && random < range[1]) {
 
@@ -40,7 +43,7 @@ public class Selection {
 
 			}
 
-		} while (newPopulation.size() < 8);
+		} while (newPopulation.size() < population.size());
 
 		return newPopulation;
 	}
@@ -61,6 +64,29 @@ public class Selection {
 		ranges[8] = ranges[7] + population.get(7).percentOnRoulette;
 
 		return ranges;
+	}
+
+	public static boolean isMutation() {
+
+		int isMutation = GenerateRealRandom.generate0to100Random();
+
+		if (isMutation > 0 && isMutation < 15) {
+			System.out.println("There is mutation!!!");
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public static boolean isCrossing() {
+
+		int isCrossing = GenerateRealRandom.generate0to100Random();
+		if (isCrossing > 0 && isCrossing < 75) {
+			System.out.println("There is crossing!!!");
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 }
