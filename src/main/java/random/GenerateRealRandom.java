@@ -1,5 +1,6 @@
 package random;
 
+import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class GenerateRealRandom {
@@ -31,6 +32,13 @@ public class GenerateRealRandom {
 
 		int number = Integer.parseInt(random[ThreadLocalRandom.current().nextInt(0, random.length)]);
 		byte ourRandom = (byte) (number % 8);
+		return ourRandom;
+	}
+	
+	public static double generate0to100DoubleRandom(){
+		
+		Random rand = new Random(Integer.parseInt(random[ThreadLocalRandom.current().nextInt(0, random.length)]));
+		double ourRandom = (double) 0.00 + (100.00 - 0.00) * rand.nextDouble();
 		return ourRandom;
 	}
 

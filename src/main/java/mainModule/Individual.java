@@ -8,6 +8,7 @@ public class Individual {
 
 	Chromosom chromosom;
 	int valueOfAdaptation;
+	double percentOnRoulette;
 
 	public Individual(byte chromosom) {
 
@@ -65,11 +66,16 @@ public class Individual {
 		result = (int) (2 * (Math.pow(chromosom.chromosomAsNumber, 2) + 1));
 		return result;
 	}
+	
+	
+	public void setPercentOnRoulette(double percent){
+		this.percentOnRoulette = percent;
+	}
 
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "Value of adaptation: " + valueOfAdaptation + chromosom.toString();
+		return "Value of adaptation: " + valueOfAdaptation +"\npercentage: "+percentOnRoulette+ chromosom.toString();
 	}
 
 }

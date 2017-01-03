@@ -14,6 +14,7 @@ public class StartMain {
 		
 		char[] testArray = {'0','0','0','0','1','0','1'};
 		char[] testArray2 = {'0','0','0','0','0','1','1'};
+		int sumOfAdaptation = 0;
 
 		System.out.println(GenerateRealRandom.random.length);
 		int count = 0;
@@ -40,19 +41,43 @@ public class StartMain {
 		startingPopulation.add(new Individual(GenerateRealRandom.generate0to127Random()));
 		startingPopulation.add(new Individual(GenerateRealRandom.generate0to127Random()));
 		
+		
+		for (Individual individual : startingPopulation) {
+			sumOfAdaptation += individual.valueOfAdaptation;
+		}
+		
+		for (Individual individual : startingPopulation) {
+			individual.setPercentOnRoulette(((double)individual.valueOfAdaptation/sumOfAdaptation)*100);
+		}
+		
+		
+		
 		System.out.println("###POPULATION###");
 		for (Individual individual : startingPopulation) {
 			System.out.println(individual.toString());
+			System.out.println();
 		}
 		
-		List<Individual> currentPopulation = new ArrayList<Individual>(startingPopulation);
+		
 		
 		do{
 			
 			
 		}while(0==1);
 		
+		System.out.println("###POPULATION 2###");
+		
 		System.out.println("###POPULATION###");
+		List<Individual> currentPopulation = new ArrayList<Individual>(Selection.makeSelection(startingPopulation));
+		
+		for (Individual individual : currentPopulation) {
+			System.out.println(individual.toString());
+			System.out.println();
+		}
+		
+		System.out.println("###POPULATION 2###");
+		
+		
 		
 		System.out.println(Integer.toBinaryString(6));
 		System.out.println(Integer.parseInt(Integer.toBinaryString(6), 2));
@@ -82,6 +107,12 @@ public class StartMain {
 		System.out.println();
 		Individual mutated = thirdOne.mutate(GenerateRealRandom.generate0to6Random());
 		System.out.println(mutated.toString());
+		
+		
+		
+		double result = (Math.random() * ((100 - 0) + 1) + 0);
+		
+	
 	}
 
 }
