@@ -56,7 +56,7 @@ public class Individual {
 			System.out.println("Mutation gone wrong!!");
 			return null;
 		}
-		System.out.println("after mutation");
+		System.out.println("After mutation");
 		System.out.println(subjectToMutate);
 		return new Individual(subjectToMutate);
 	}
