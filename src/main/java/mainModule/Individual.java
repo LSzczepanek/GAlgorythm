@@ -42,7 +42,11 @@ public class Individual {
 	public Individual mutate(byte locus){
 		
 		System.out.println("Mutation with locus: "+locus);
+		
+		
 		char[] subjectToMutate = Arrays.copyOf(this.chromosom.chromosomAsCharArray, this.chromosom.chromosomAsCharArray.length);
+		System.out.println("Before mutation");
+		System.out.println(subjectToMutate);
 		if(subjectToMutate[locus] == '0'){
 			subjectToMutate[locus] = '1';
 		}else if(subjectToMutate[locus] == '1'){
@@ -52,6 +56,8 @@ public class Individual {
 			System.out.println("Mutation gone wrong!!");
 			return null;
 		}
+		System.out.println("after mutation");
+		System.out.println(subjectToMutate);
 		return new Individual(subjectToMutate);
 	}
 	

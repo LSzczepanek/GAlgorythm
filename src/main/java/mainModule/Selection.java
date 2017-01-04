@@ -11,34 +11,42 @@ public class Selection {
 
 		List<Individual> newPopulation = new ArrayList<Individual>();
 		double[] range = setRanges(population);
+		System.out.println("### Selected chromosoms as numbers ###");
 		do {
 			double random = GenerateRealRandom.generate0to100DoubleRandom();
-			System.out.println("Random value is: " + random);
 
 			if (random > range[0] && random < range[1]) {
 
 			} else if (random >= range[0] && random <= range[1]) {
+				System.out.println("Has been selected: " + population.get(0).chromosom.chromosomAsNumber);
 				newPopulation.add(new Individual(population.get(0).chromosom.chromosomAsCharArray));
 
 			} else if (random > range[1] && random <= range[2]) {
+				System.out.println("Has been selected: " + population.get(1).chromosom.chromosomAsNumber);
 				newPopulation.add(new Individual(population.get(1).chromosom.chromosomAsCharArray));
 
 			} else if (random > range[2] && random <= range[3]) {
+				System.out.println("Has been selected: " + population.get(2).chromosom.chromosomAsNumber);
 				newPopulation.add(new Individual(population.get(2).chromosom.chromosomAsCharArray));
 
 			} else if (random > range[3] && random <= range[4]) {
+				System.out.println("Has been selected: " + population.get(3).chromosom.chromosomAsNumber);
 				newPopulation.add(new Individual(population.get(3).chromosom.chromosomAsCharArray));
 
 			} else if (random > range[4] && random <= range[5]) {
+				System.out.println("Has been selected: " + population.get(4).chromosom.chromosomAsNumber);
 				newPopulation.add(new Individual(population.get(4).chromosom.chromosomAsCharArray));
 
 			} else if (random > range[5] && random <= range[6]) {
+				System.out.println("Has been selected: " + population.get(5).chromosom.chromosomAsNumber);
 				newPopulation.add(new Individual(population.get(5).chromosom.chromosomAsCharArray));
 
 			} else if (random > range[6] && random <= range[7]) {
+				System.out.println("Has been selected: " + population.get(6).chromosom.chromosomAsNumber);
 				newPopulation.add(new Individual(population.get(6).chromosom.chromosomAsCharArray));
 
 			} else if (random > range[7] && random <= range[8]) {
+				System.out.println("Has been selected: " + population.get(7).chromosom.chromosomAsNumber);
 				newPopulation.add(new Individual(population.get(7).chromosom.chromosomAsCharArray));
 
 			}
@@ -69,7 +77,7 @@ public class Selection {
 	public static boolean isMutation() {
 
 		int isMutation = GenerateRealRandom.generate0to100Random();
-
+		System.out.println("Random value to get mutation is: "+ isMutation);
 		if (isMutation > 0 && isMutation < 15) {
 			System.out.println("There is mutation!!!");
 			return true;
@@ -81,12 +89,45 @@ public class Selection {
 	public static boolean isCrossing() {
 
 		int isCrossing = GenerateRealRandom.generate0to100Random();
+		System.out.println("Random value to get crossing is: "+isCrossing);
 		if (isCrossing > 0 && isCrossing < 75) {
 			System.out.println("There is crossing!!!");
 			return true;
 		} else {
 			return false;
 		}
+	}
+
+	public static int minNumberInPopulation(List<Individual> population) {
+		int[] arrayOfPopulation = new int[population.size()];
+		for (int i = 0; i < population.size(); i++) {
+			arrayOfPopulation[i] = population.get(i).chromosom.chromosomAsNumber;
+		}
+
+		int min = 128;
+		int index = 0;
+		for (int i = 0; i < arrayOfPopulation.length; i++)
+			if (arrayOfPopulation[i] < min) {
+				min = arrayOfPopulation[i];
+				index = i;
+			}
+		return arrayOfPopulation[index];
+	}
+	
+	public static int maxNumberInPopulation(List<Individual> population) {
+		int[] arrayOfPopulation = new int[population.size()];
+		for (int i = 0; i < population.size(); i++) {
+			arrayOfPopulation[i] = population.get(i).chromosom.chromosomAsNumber;
+		}
+
+		int max = -1;
+		int index = 0;
+		for (int i = 0; i < arrayOfPopulation.length; i++)
+			if (arrayOfPopulation[i] > max) {
+				max = arrayOfPopulation[i];
+				index = i;
+			}
+		return arrayOfPopulation[index];
 	}
 
 }
