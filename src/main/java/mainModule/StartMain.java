@@ -22,6 +22,7 @@ public class StartMain {
 		startingPopulation.add(new Individual(GenerateRealRandom.generate0to127Random()));
 		startingPopulation.add(new Individual(GenerateRealRandom.generate0to127Random()));
 		startingPopulation.add(new Individual(GenerateRealRandom.generate0to127Random()));
+		 
 
 		for (Individual individual : startingPopulation) {
 			sumOfAdaptation += individual.valueOfAdaptation;
@@ -107,7 +108,7 @@ public class StartMain {
 
 			avarageOfAdaptationInPopulation = avarageOfAdaptationInPopulation / 8.00;
 
-			if (avarageOfAdaptationInPopulation > 30531 && Selection.minNumberInPopulation(currentPopulation) > 120) {
+			if (avarageOfAdaptationInPopulation > 31756 && Selection.minNumberInPopulation(currentPopulation) >= 125) {
 				break;
 			}
 		} while (true);
